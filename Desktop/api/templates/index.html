@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>API</title>
+</head>
+<body>
+
+    <h1>Templates HTML com Python</h1>
+
+    <h2>Lista de usuários cadastros</h2>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+        </tr>
+
+        {% for usuario in dados %}
+        <tr>
+            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.nome }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>{{ usuario.telefone }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Inserir Cadastros</h2>
+
+    <form method="POST">
+        <input type="text" name="nome" placeholder="Nome Completo">
+        <br>
+
+        <input type="email" name="email" placeholder="Seu e-mail">
+        <br>
+
+        <input type="text" name="telefone" placeholder="Seu telefone">
+        <br>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+</body>
+</html>
